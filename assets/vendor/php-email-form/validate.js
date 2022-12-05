@@ -16,7 +16,7 @@
 
       let action = thisForm.getAttribute('action');
       let recaptcha = thisForm.getAttribute('data-recaptcha-site-key');
-      
+
       if( ! action ) {
         displayError(thisForm, 'The form action property is not set!')
         return;
@@ -37,15 +37,18 @@
                 php_email_form_submit(thisForm, action, formData);
               })
             } catch(error) {
+              console.log(1)
               displayError(thisForm, error)
             }
           });
         } else {
+          console.log(2)
           displayError(thisForm, 'The reCaptcha javascript API url is not loaded!')
         }
       } else {
         php_email_form_submit(thisForm, action, formData);
       }
+
     });
   });
 
@@ -60,22 +63,29 @@
     })
     .then(data => {
       thisForm.querySelector('.loading').classList.remove('d-block');
-      if (data.trim() == 'OK') {
+
+      var jsoninfo = JSON.parse(data)
+
+      // if (data.trim() == 'OK') {
+      if (jsoninfo.ok == true) {
         thisForm.querySelector('.sent-message').classList.add('d-block');
-        thisForm.reset(); 
+        thisForm.reset();
       } else {
-        throw new Error(data ? data : 'Form submission failed and no error message returned from: ' + action); 
+        throw new Error(data ? data : 'Form submission failed and no error message returned from: ' + action);
       }
     })
     .catch((error) => {
+      console.log(3)
       displayError(thisForm, error);
     });
   }
 
   function displayError(thisForm, error) {
     thisForm.querySelector('.loading').classList.remove('d-block');
-    thisForm.querySelector('.error-message').innerHTML = error;
+    // thisForm.querySelector('.error-message').innerHTML = error;
+    thisForm.querySelector('.error-message').innerHTML = "Seems to be some error. You can try to contact me directly to my email.";
     thisForm.querySelector('.error-message').classList.add('d-block');
+    console.log('error:', error)
   }
 
 })();
