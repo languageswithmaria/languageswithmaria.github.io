@@ -1179,6 +1179,28 @@ section {
   }
 }
 
+.icon {
+    height: 16px;
+    width: 16px;
+    display:inline-block;
+    /* display: block; */
+    /* Other styles here */
+    background-size: cover;
+    position: relative;
+}
+
+#lingua{
+  background: url('../img/logos/linguaschoolfav.png');
+}
+#ole{
+  background: url('../img/logos/ole.png');
+}
+#japi{
+  background: url('../img/logos/japifav.png');
+}
+#mrl{
+  background: url('../img/logos/mrlfav.png');
+}
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/

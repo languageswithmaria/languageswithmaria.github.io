@@ -289,7 +289,7 @@
           <div class="col-lg-6">
             <h3 class="resume-title">Professional Experience</h3>
             <div class="resume-item">
-              <h4>Spanish Teacher in Linguaschools</h4>
+              <h4>Spanish Teacher in Linguaschools <i class='icon' id="lingua"></i></h4>
               <h5>Mar. 2022 - Sept. 2022</h5>
               <p><em>Barcelona, Spain</em></p>
               <p>Face-to-face and online Spanish lessons.<br> International adult students in groups of different sizes and private individual lesssons.</p>
@@ -301,7 +301,7 @@
               </ul> -->
             </div>
             <div class="resume-item">
-              <h4>Spanish Teacher in Olé Languages</h4>
+              <h4>Spanish Teacher in Olé Languages <i class='icon' id="ole"></i></h4>
               <h5>Jan. 2022 - May 2022</h5>
               <p><em>Barcelona, Spain</em></p>
               <p>Face-to-face Spanish lessons.<br> International adult students in groups of different sizes and private individual lesssons.</p>
@@ -314,13 +314,13 @@
                 various schools within the education public system.</p>
             </div>
             <div class="resume-item">
-              <h4>Spanish Teacher in Ms. & Mr. Language</h4>
+              <h4>Spanish Teacher in Ms. & Mr. Language <i class='icon' id="mrl"></i></h4>
               <h5>Feb. 2021 - May 2021</h5>
               <p><em>Badalona, Spain</em></p>
               <p>Face-to-face Spanish lessons to a group of 3 adult students, two from Germany and one from Denmark.</p>
             </div>
             <div class="resume-item">
-              <h4>Catalan Teacher in JAPI Association</h4>
+              <h4>Catalan Teacher in JAPI Association <i class='icon' id="japi"></i></h4>
               <h5>Nov. 2020 - Feb. 2021</h5>
               <p><em>Esplai la Florida, Barcelona, Spain</em></p>
               <p>Face-to-face Catalan lessons to a group of 23 adult students from Philippines.</p>
@@ -713,14 +713,12 @@
                 <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
               </div>
               <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                <textarea class="form-control" name="message" id="message" rows="5" placeholder="Message" required></textarea>
               </div>
               <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
+                <div class="text-center"><p id="thank_message" style="display: none">Thank you for contacting me.<br> I will get in contact with you as soon as possible.</p></button></div>
               </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
+              <div class="text-center"><button type="submit" onclick="toggleThanksMessage()">Send Message</button></div>
             </form>
 
 
@@ -794,6 +792,7 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/index.js"></script>
 
 </body>
 
